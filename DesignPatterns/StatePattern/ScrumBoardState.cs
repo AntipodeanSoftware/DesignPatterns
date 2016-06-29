@@ -13,7 +13,7 @@ namespace DesignPatterns.StatePattern
 		}
 
 		public abstract void SetToDo();
-		public abstract void SetInprogress();
+		public abstract void SetInProgress();
 		public abstract void SetDone();
 	}
 }

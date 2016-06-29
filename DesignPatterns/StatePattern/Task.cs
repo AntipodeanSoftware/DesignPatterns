@@ -12,6 +12,8 @@ namespace DesignPatterns.StatePattern
 
 		public string Name{ get; set; }
 
+		public ScrumBoardState CurrentState { get { return _taskState; } }
+
 		public Task()
 		{
 			_toDoState = new ToDoState(this);
@@ -48,7 +50,7 @@ namespace DesignPatterns.StatePattern
 
 		public void SetInProgress()
 		{
-			_taskState.SetInprogress();
+			_taskState.SetInProgress();
 		}
 
 		public void SetDone()

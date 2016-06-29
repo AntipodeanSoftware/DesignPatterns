@@ -11,7 +11,7 @@ namespace DesignPatterns.StatePattern
 			Console.WriteLine(String.Format("{0} is To Do", base._task.Name));
 			_task.SetState(_task.GetToDoState());
 		}
-		public override void SetInprogress()
+		public override void SetInProgress()
 		{
 			Console.WriteLine(String.Format("{0} is already In Progress",base._task.Name));
 		}
