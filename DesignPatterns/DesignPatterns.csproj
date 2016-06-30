@@ -48,7 +48,8 @@
     <Compile Include="AdapterPattern\ElecticCarAdpater.cs" />
     <Compile Include="AdapterPattern\AutoDriver.cs" />
     <Compile Include="AdapterPattern\CarAdapterClient.cs" />
-    <Compile Include="AdapterPattern\DrivingMessage.cs" />
+    <Compile Include="ObserverPattern\MessageProvider.cs" />
+    <Compile Include="ObserverPattern\MessageObserver.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -56,5 +57,6 @@
     <Folder Include="AbstractFactory\" />
     <Folder Include="StatePattern\" />
     <Folder Include="AdapterPattern\" />
+    <Folder Include="ObserverPattern\" />
   </ItemGroup>
 </Project>

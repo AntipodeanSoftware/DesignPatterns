@@ -4,18 +4,21 @@ namespace DesignPatterns.AdapterPattern
 {
 	public class Tesla : IElectricCar
 	{
-		public Tesla ()
+		MessageProvider _messageProvider;
+
+		public Tesla (MessageProvider messageProvider)
 		{
+			_messageProvider = messageProvider;
 		}
 
 		public void Accelerate ()
 		{
-			Console.WriteLine ("Tesla is Accellllleraatting!!!!!");
+			_messageProvider.PublishMessage("Tesla is Accellllleraatting!!!!!");
 		}
 
 		public void Break ()
 		{
-			Console.WriteLine ("Tesla is Breaking");
+			_messageProvider.PublishMessage("Tesla is Breaking");
 		}
 			
 

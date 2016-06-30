@@ -4,23 +4,26 @@ namespace DesignPatterns.AdapterPattern
 {
 	public class Holden : ICar
 	{
-		public Holden ()
+		MessageProvider _messageProvider;
+		
+		public Holden (MessageProvider messageProvider)
 		{
+			_messageProvider = messageProvider;
 		}
 			
 		public void Accelerate ()
 		{
-			Console.WriteLine ("Holden is Acclerating");
+			_messageProvider.PublishMessage("Holden is Acclerating");
 		}
 
 		public void Brake ()
 		{
-			Console.WriteLine ("Holden is Braking");
+			_messageProvider.PublishMessage("Holden is Braking");
 		}
 
 		public void ChangeGear ()
 		{
-			Console.WriteLine ("Holden is Changing gear");
+			_messageProvider.PublishMessage("Holden is Changing gear");
 		}
 	}
 }

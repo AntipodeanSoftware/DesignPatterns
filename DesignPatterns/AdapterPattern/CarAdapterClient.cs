@@ -16,11 +16,15 @@ namespace DesignPatterns.AdapterPattern
 			Console.WriteLine ("Example of the Adapter Pattern.");
 			Console.WriteLine ("Lets Test Drive some cars!");
 
-			ICar holden = new Holden ();
+			MessageProvider messageProvider = new MessageProvider ();
+			MessageObserver messageObserver = new MessageObserver ();
+			messageObserver.Subscribe (messageProvider);
+
+			ICar holden = new Holden (messageProvider);
 
 			driver.Drive (holden);
 
-			IElectricCar tesla = new Tesla ();
+			IElectricCar tesla = new Tesla (messageProvider);
 			ElecticCarAdpater electicCarAdapter = new ElecticCarAdpater (tesla);
 
 			driver.Drive (electicCarAdapter);

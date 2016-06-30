@@ -23,6 +23,9 @@ namespace DesignPatterns
 				case"A":
 					RunAdapterExample ();
 					break;
+				case"O":
+					RunObserverExample ();
+					break;
 				case "S":
 					RunStateExample ();
 					break;
@@ -39,7 +42,7 @@ namespace DesignPatterns
 
 		private static void PrintHelp()
 		{
-			Console.WriteLine ("Type A for Adapter Patten, S for state pattern, H for help or Q to quit");
+			Console.WriteLine ("Type A for Adapter Patten, O for observer pattern, S for state pattern, H for help or Q to quit");
 		}
 
 		private static void RunAdapterExample()
@@ -51,6 +54,17 @@ namespace DesignPatterns
 		private static void RunStateExample()
 		{
 			ScrumBoardClient.RunScrumBoardClient();
+		}
+
+		private static void RunObserverExample()
+		{
+			MessageProvider messageProvider = new MessageProvider ();
+			MessageObserver messageObserver = new MessageObserver ();
+
+			messageObserver.Subscribe (messageProvider);
+
+			messageProvider.PublishMessage ("Hello");
+
 		}
 
 	}

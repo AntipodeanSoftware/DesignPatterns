@@ -36,7 +36,8 @@
   <ItemGroup>
     <Compile Include="Test.cs" />
     <Compile Include="StatePatternTests\StatePatternTest.cs" />
-    <Compile Include="StatePatternTests\AdapterPatternTests.cs" />
+    <Compile Include="AdapterPatternTests\AdapterPatternTests.cs" />
+    <Compile Include="ObserverPatternTests\ObserverPatternTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -44,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="StatePatternTests\" />
+    <Folder Include="AdapterPatternTests\" />
+    <Folder Include="ObserverPatternTests\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj">
