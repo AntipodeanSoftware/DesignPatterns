@@ -41,12 +41,20 @@
     <Compile Include="StatePattern\DoneState.cs" />
     <Compile Include="StatePattern\ScrumBoardState.cs" />
     <Compile Include="StatePattern\ScrumBoardClient.cs" />
+    <Compile Include="AdapterPattern\ICar.cs" />
+    <Compile Include="AdapterPattern\IElectricCar.cs" />
+    <Compile Include="AdapterPattern\Holden.cs" />
+    <Compile Include="AdapterPattern\Tesla.cs" />
+    <Compile Include="AdapterPattern\ElecticCarAdpater.cs" />
+    <Compile Include="AdapterPattern\AutoDriver.cs" />
+    <Compile Include="AdapterPattern\CarAdapterClient.cs" />
+    <Compile Include="AdapterPattern\DrivingMessage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Adapter\" />
     <Folder Include="Singleton\" />
     <Folder Include="AbstractFactory\" />
     <Folder Include="StatePattern\" />
+    <Folder Include="AdapterPattern\" />
   </ItemGroup>
 </Project>

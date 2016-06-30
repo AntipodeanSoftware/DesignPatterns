@@ -32,7 +32,7 @@ namespace DesignPatternTests
 		}
 
 		[Test ()]
-		public void SetToDoStateToDoneStateTest ()
+		public void AttemptSetToDoStateToDoneStateTest ()
 		{
 			Task task = new Task ();
 			task.Name = taskName;
@@ -42,7 +42,7 @@ namespace DesignPatternTests
 		}
 
 		[Test ()]
-		public void SetDoneStateToToDoStateTest ()
+		public void AttemptSetDoneStateToToDoStateTest ()
 		{
 			Task task = new Task ();
 			task.Name = taskName;

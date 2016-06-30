@@ -10,6 +10,7 @@ namespace DesignPatterns.StatePattern
 
 		public static void RunScrumBoardClient()
 		{
+			Console.WriteLine ("Example of the State Pattern");
 			Console.WriteLine ("Welcome to the Scrum Board!");
 
 			Task task = new Task ();
