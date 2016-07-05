@@ -8,17 +8,19 @@ namespace DesignPatterns.StatePattern
 
 		public override void SetToDo()
 		{
-			Console.WriteLine(String.Format("{0} is To Do", base._task.Name));
-			_task.SetState(_task.GetToDoState());
+			Message =  String.Format("{0} is To Do", task.Name);
+			task.SetState(task.GetToDoState());
 		}
+
 		public override void SetInProgress()
 		{
-			Console.WriteLine(String.Format("{0} is already In Progress",base._task.Name));
+			Message = String.Format("{0} is already In Progress", task.Name);
 		}
+
 		public override void SetDone()
 		{
-			Console.WriteLine(String.Format("{0} is Done", base._task.Name));
-			_task.SetState(_task.GetDoneState());
+			Message = String.Format("{0} is Done", task.Name);
+			task.SetState(task.GetDoneState());
 		}
 
 	}

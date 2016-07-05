@@ -1,23 +1,29 @@
-﻿
-using System;
+﻿using System;
+using System.ComponentModel;
 
 namespace DesignPatterns.StatePattern
 {
 	public abstract class ScrumBoardState
 	{
-		public Task _task;
+		public Task task;
 
-		protected MessageProvider _messageProvider;
+		public MessageProvider messageProvider;
 
-		public ScrumBoardState(Task task, MessageProvider messageProvider)
+	    string message;
+
+		public string Message { get { return message; } set { message = value; messageProvider.PublishMessage(message); } }
+
+		public ScrumBoardState(Task task)
 		{
-			_task = task;
-			_messageProvider = messageProvider;
+			this.task = task;
+			this.messageProvider = new MessageProvider();
 		}
 
 		public abstract void SetToDo();
 		public abstract void SetInProgress();
 		public abstract void SetDone();
+
+
 	}
 }
 

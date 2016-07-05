@@ -18,6 +18,15 @@ namespace DesignPatternTests
 			Assert.AreEqual ("DesignPatterns.StatePattern.ToDoState", task.CurrentState.ToString());
 		}
 
+		[Test()]
+		public void IntialStateMessageTest()
+		{
+			Task task = new Task();
+			task.Name = taskName;
+
+			Assert.AreEqual("Blh", task.CurrentState.Message);
+		}
+
 		[Test ()]
 		public void SetInProgressThroughToDoneTest ()
 		{

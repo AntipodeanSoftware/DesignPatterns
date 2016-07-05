@@ -15,7 +15,7 @@ namespace DesignPatternTests
 		[Test()]
 		public void ElectricCarAdapterAccelerateTeslaTest()
 		{
-			IElectricCar tesla = new Tesla ();
+			IElectricCar tesla = null;;// = new Tesla ();
 
 			ElecticCarAdpater electricCarAdapter = new ElecticCarAdpater (tesla);
 
@@ -27,7 +27,7 @@ namespace DesignPatternTests
 		[Test()]
 		public void ElectricCarAdapterChangeGearTeslaTest()
 		{
-			IElectricCar tesla = new Tesla ();
+			IElectricCar tesla = null;;// = new Tesla ();
 
 			ElecticCarAdpater electricCarAdapter = new ElecticCarAdpater (tesla);
 
@@ -39,7 +39,7 @@ namespace DesignPatternTests
 		[Test()]
 		public void ElectricCarAdapterBreakTeslaTest()
 		{
-			IElectricCar tesla = new Tesla ();
+			IElectricCar tesla = null;;// = new Tesla ();
 
 			ElecticCarAdpater electricCarAdapter = new ElecticCarAdpater (tesla);
 
@@ -51,7 +51,7 @@ namespace DesignPatternTests
 		[Test()]
 		public void AutoDriverBreakHoldenTest()
 		{
-			ICar holden = new Holden ();
+			ICar holden = null;;// = new Holden ();
 
 			AutoDriver driver = new AutoDriver ();
 
