@@ -24,8 +24,32 @@ namespace DesignPatternTests
 			Task task = new Task();
 			task.Name = taskName;
 
-			Assert.AreEqual("Blh", task.CurrentState.Message);
+			Assert.AreEqual(null, task.CurrentState.Message);
 		}
+
+		[Test()]
+		public void IntialStateToInProgressMessageTest()
+		{
+			Task task = new Task();
+			task.Name = taskName;
+
+			task.SetInProgress();
+
+			Assert.AreEqual("Task In Progress", task.CurrentState.Message);
+		}
+
+		[Test()]
+		public void InProgressToDoneMessageTest()
+		{
+			Task task = new Task();
+			task.Name = taskName;
+
+			task.SetInProgress();
+			task.SetDone();
+
+			Assert.AreEqual("Task Done", task.CurrentState.Message);
+		}
+
 
 		[Test ()]
 		public void SetInProgressThroughToDoneTest ()

@@ -10,7 +10,6 @@ namespace DesignPatterns.StatePattern
 
 		private ScrumBoardState _taskState;
 
-
 		public string Name{ get; set; }
 
 		public ScrumBoardState CurrentState { get { return _taskState; } }
