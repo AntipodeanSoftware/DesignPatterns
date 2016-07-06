@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace DesignPatterns.StatePattern
 {
@@ -7,16 +6,16 @@ namespace DesignPatterns.StatePattern
 	{
 		public Task task;
 
-		public MessageProvider messageProvider;
+		//public MessageProvider messageProvider;
 
-	    string message;
+	    //string message;
 
-		public string Message { get { return message; } set { message = value; messageProvider.PublishMessage(message); } }
+		//public string Message { get { return message; } set { message = value; messageProvider.PublishMessage(message); } }
 
 		public ScrumBoardState(Task task)
 		{
 			this.task = task;
-			this.messageProvider = new MessageProvider();
+			//this.messageProvider = new MessageProvider();
 		}
 
 		public abstract void SetToDo();

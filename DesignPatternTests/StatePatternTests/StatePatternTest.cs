@@ -24,7 +24,7 @@ namespace DesignPatternTests
 			Task task = new Task();
 			task.Name = taskName;
 
-			Assert.AreEqual(null, task.CurrentState.Message);
+			Assert.AreEqual(null, task.Message);
 		}
 
 		[Test()]
@@ -35,7 +35,7 @@ namespace DesignPatternTests
 
 			task.SetInProgress();
 
-			Assert.AreEqual("Task In Progress", task.CurrentState.Message);
+			Assert.AreEqual("Task In Progress", task.Message);
 		}
 
 		[Test()]
@@ -47,7 +47,7 @@ namespace DesignPatternTests
 			task.SetInProgress();
 			task.SetDone();
 
-			Assert.AreEqual("Task Done", task.CurrentState.Message);
+			Assert.AreEqual("Task Done", task.Message);
 		}
 
 

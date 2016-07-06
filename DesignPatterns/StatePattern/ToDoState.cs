@@ -8,18 +8,18 @@ namespace DesignPatterns.StatePattern
 
 		public override void SetToDo()
 		{
-			Message = @"Task is already To Do";
+			task.Message = @"Task is already To Do";
 		}
 
 		public override void SetInProgress()
 		{
-			task.SetState(task.GetInProgressState ());
-			Message = @"Task In Progress";
+			task.Message = @"Task In Progress";
+			task.SetState(task.GetInProgressState());
 		}
 
 		public override void SetDone()
 		{
-			Message = @"Task cannot be set to Done";
+			task.Message = @"Task cannot be set to Done";
 		}
 	}
 }

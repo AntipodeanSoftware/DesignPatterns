@@ -17,6 +17,9 @@ namespace DesignPatterns.StatePattern
 			task.Name = "Build DB";
 			task.SetInProgress ();
 
+			MessageObserver messageObserver = new MessageObserver();
+			task.messageProvider.Subscribe(messageObserver);
+
 			bool runLoop = true;
 
 			while (runLoop) {

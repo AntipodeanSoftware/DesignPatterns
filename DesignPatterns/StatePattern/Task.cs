@@ -10,12 +10,20 @@ namespace DesignPatterns.StatePattern
 
 		private ScrumBoardState _taskState;
 
+		public MessageProvider messageProvider;
+
+		string message;
+
+		public string Message { get { return message; } set { message = value; messageProvider.PublishMessage(message); } }
+
 		public string Name{ get; set; }
 
 		public ScrumBoardState CurrentState { get { return _taskState; } }
 
 		public Task()
 		{
+			messageProvider = new MessageProvider();
+
 			_toDoState = new ToDoState(this);
 			_inProgressState = new InProgressState(this);
 			_doneState = new DoneState(this);
