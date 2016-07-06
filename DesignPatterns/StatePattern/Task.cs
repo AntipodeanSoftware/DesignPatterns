@@ -10,11 +10,11 @@ namespace DesignPatterns.StatePattern
 
 		private ScrumBoardState _taskState;
 
-		public MessageProvider messageProvider;
-
-		string message;
+		private string message;
 
 		public string Message { get { return message; } set { message = value; messageProvider.PublishMessage(message); } }
+
+		public MessageProvider messageProvider;
 
 		public string Name{ get; set; }
 
