@@ -52,6 +52,12 @@
     <Compile Include="AdapterPattern\CarAdapterClient.cs" />
     <Compile Include="ObserverPattern\MessageProvider.cs" />
     <Compile Include="ObserverPattern\MessageObserver.cs" />
+    <Compile Include="CommandPattern\ICommand.cs" />
+    <Compile Include="CommandPattern\AdapterCommand.cs" />
+    <Compile Include="CommandPattern\ObserverCommand.cs" />
+    <Compile Include="CommandPattern\StateCommand.cs" />
+    <Compile Include="CommandPattern\HelpCommand.cs" />
+    <Compile Include="CommandPattern\QuitCommand.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -60,5 +66,6 @@
     <Folder Include="StatePattern\" />
     <Folder Include="AdapterPattern\" />
     <Folder Include="ObserverPattern\" />
+    <Folder Include="CommandPattern\" />
   </ItemGroup>
 </Project>

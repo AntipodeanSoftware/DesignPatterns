@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using DesignPatterns.StatePattern;
 using DesignPatterns.AdapterPattern;
+
 
 namespace DesignPatterns
 {
@@ -12,60 +14,28 @@ namespace DesignPatterns
 
 			bool isRunning = true;
 
-			PrintHelp ();
+			Dictionary<string, ICommand> commands = new Dictionary<string, ICommand>();
+
+			commands.Add("A", new AdapterCommand());
+			commands.Add("O", new ObserverCommand());
+			commands.Add("S", new StateCommand());
+			commands.Add("H", new HelpCommand());
+			commands.Add("Q", new QuitCommand());
+
+			var helpCommand = commands["H"];
+
+			helpCommand.Run();
 
 			while (isRunning) 
 			{
-				var inputKey = Console.ReadKey ();
+				var inputKey = Console.ReadKey().KeyChar.ToString();
 
-				switch (inputKey.KeyChar.ToString()) 
+				if (commands.ContainsKey(inputKey))
 				{
-				case"A":
-					RunAdapterExample ();
-					break;
-				case"O":
-					RunObserverExample ();
-					break;
-				case "S":
-					RunStateExample ();
-					break;
-				case"H":
-					PrintHelp ();
-					break;
-				case"Q":
-					isRunning = false;
-					break;
+					var commandToRun = commands[inputKey];
+					commandToRun.Run();
 				}
-						
 			}
 		}
-
-		private static void PrintHelp()
-		{
-			Console.WriteLine ("Type A for Adapter Patten, O for observer pattern, S for state pattern, H for help or Q to quit");
-		}
-
-		private static void RunAdapterExample()
-		{
-			CarAdapterClient client = new CarAdapterClient ();
-			client.TestDrive ();
-		}
-
-		private static void RunStateExample()
-		{
-			ScrumBoardClient.RunScrumBoardClient();
-		}
-
-		private static void RunObserverExample()
-		{
-			MessageProvider messageProvider = new MessageProvider ();
-			MessageObserver messageObserver = new MessageObserver ();
-
-			messageObserver.Subscribe (messageProvider);
-
-			messageProvider.PublishMessage ("Hello");
-
-		}
-
 	}
 }
