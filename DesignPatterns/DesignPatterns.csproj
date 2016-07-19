@@ -58,6 +58,7 @@
     <Compile Include="CommandPattern\StateCommand.cs" />
     <Compile Include="CommandPattern\HelpCommand.cs" />
     <Compile Include="CommandPattern\QuitCommand.cs" />
+    <Compile Include="Singleton\BroadcastSingleton.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
